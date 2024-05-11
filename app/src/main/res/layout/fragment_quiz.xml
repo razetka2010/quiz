@@ -5,6 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".QuizFragment">
 
+    <data>
+    <variable
+        name="quizFragment"
+        type="ru.da.soccerquiz.QuizFragment" />
+    </data>
+
     <ScrollView
         android:layout_width="416dp"
         android:layout_height="732dp"
@@ -49,7 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="212dp"
-                android:text="Вопрос"
+                android:text="@{quizFragment.currentQuizItem.question}"
+                tools:text="вопрос?"
                 android:textSize="34sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline3"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,15 +76,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Первый ответ"
-                    android:textSize="48dp" />
+                    android:text="@{quizFragment.answer[0]}"
+                    tools:text="Первый ответ"
+                    android:textSize="40dp" />
 
                 <RadioButton
                     android:id="@+id/Aswer2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Второй ответ"
+                    android:text="@{quizFragment.answer[1]}"
+                    tools:text="Второй ответ"
                     android:textSize="48dp" />
 
                 <RadioButton
@@ -85,7 +94,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="Третий ответ"
+                    android:text="@{quizFragment.answer[2]}"
+                    tools:text="Третий ответ"
                     android:textSize="48dp" />
 
             </RadioGroup>

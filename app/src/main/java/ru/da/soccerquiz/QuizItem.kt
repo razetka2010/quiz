@@ -2,10 +2,10 @@ package ru.da.soccerquiz
 
 class QuizItem {
     var question: String
-    var answer: String
+    var answerList: List<String>
 
-   constructor (question: String, answer: String){
+   constructor (question: String, answerList: List<String> ){
        this.question = question
-       this.answer = answer
+       this.answerList = answerList
     }
 }

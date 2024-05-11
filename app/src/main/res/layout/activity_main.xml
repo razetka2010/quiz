@@ -9,9 +9,12 @@
         tools:context=".MainActivity">
 
         <fragment
+            android:id="@+id/appNavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:name="ru.da.soccerquiz.fragment_welkome_screen"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/app_navigation"
+            app:defaultNavHost="true"
             >
 
         </fragment>

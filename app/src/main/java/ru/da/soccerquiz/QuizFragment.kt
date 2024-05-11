@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import ru.da.soccerquiz.databinding.FragmentQuizBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -57,7 +58,7 @@ class QuizFragment : Fragment() {
     )
 
 lateinit var currentQuizItem: QuizItem
-lateinit var answer:MutableList<String>
+lateinit var answers:MutableList<String>
 private var quizIteIndex = 0
 private val numberOfQuestions = 3
 
@@ -79,8 +80,37 @@ private val numberOfQuestions = 3
 
         getRandomQuizItem()
         binding.quizFragment = this
+        binding.passButton.setOnClickListener { view: View ->
+            val selectedCheckboxId = binding.radioGroup.checkedRadioButtonId
 
+            if (selectedCheckboxId != -1) {
 
+                var answerIndex = 0
+                when (selectedCheckboxId) {
+                    R.id.firstAnswer-> answerIndex = 0
+                    R.id.secondAnswer -> answerIndex = 1
+                    R.id.thirdAnswer -> answerIndex = 2
+                }
+
+                if (answers[answerIndex] == currentQuizItem.answerList[0]) {
+                    quizIteIndex++
+                    if (quizIteIndex < numberOfQuestions) {
+                        setQuizItem()
+                        binding.invalidateAll()
+                    } else {
+                        // Go to goalFragment
+                        view.findNavController().navigate(
+                            R.id.action_quizFragment_to_goalFragment
+                        )
+                    }
+                } else {
+                    // Go to missFragment
+                    view.findNavController().navigate(
+                        R.id.action_quizFragment_to_missFragment
+                    )
+                }
+            }
+        }
 
         return binding.root
 
@@ -117,8 +147,8 @@ private val numberOfQuestions = 3
 
     private fun setQuizItem() {
         currentQuizItem = quizItems[quizIteIndex]
-        answer = currentQuizItem.answerList.toMutableList()
-        answer.shuffle()
+        answers = currentQuizItem.answerList.toMutableList()
+        answers.shuffle()
     }
 
 }

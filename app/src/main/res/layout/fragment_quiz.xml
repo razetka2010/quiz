@@ -64,6 +64,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <RadioGroup
+                android:id="@+id/radioGroup"
                 android:layout_width="393dp"
                 android:layout_height="201dp"
                 android:layout_marginBottom="12dp"
@@ -72,36 +73,36 @@
                 app:layout_constraintStart_toStartOf="parent">
 
                 <RadioButton
-                    android:id="@+id/Aswer1"
+                    android:id="@+id/firstAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@{quizFragment.answer[0]}"
+                    android:text="@{quizFragment.answers[0]}"
                     tools:text="Первый ответ"
                     android:textSize="40dp" />
 
                 <RadioButton
-                    android:id="@+id/Aswer2"
+                    android:id="@+id/secondAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@{quizFragment.answer[1]}"
+                    android:text="@{quizFragment.answers[1]}"
                     tools:text="Второй ответ"
                     android:textSize="48dp" />
 
                 <RadioButton
-                    android:id="@+id/Aswer3"
+                    android:id="@+id/thirdAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="@{quizFragment.answer[2]}"
+                    android:text="@{quizFragment.answers[2]}"
                     tools:text="Третий ответ"
                     android:textSize="48dp" />
 
             </RadioGroup>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/passButton"
                 android:layout_width="399dp"
                 android:layout_height="62dp"
                 android:layout_marginStart="8dp"

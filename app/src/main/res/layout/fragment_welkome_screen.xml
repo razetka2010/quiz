@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".fragment_welkome_screen"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".fragment_welkome_screen">
+       >
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="0dp"
@@ -20,8 +21,8 @@
 
         <TextView
             android:id="@+id/text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="411dp"
+            android:layout_height="733dp"
             android:fontFamily="sans-serif-light"
             android:text="Soccer Quiz"
             android:textColor="#FFFFFF"
@@ -34,17 +35,14 @@
             app:layout_constraintVertical_bias="0.09" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/letsplay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="148dp"
             android:background="@drawable/lets_play_button"
             android:text="Let's play!"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.99"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
